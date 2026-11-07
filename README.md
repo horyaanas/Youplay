@@ -1,11 +1,73 @@
-<div align="center">
+# YouPlay - تطبيق يوتيوب أندرويد المتكامل (Native YouTube Android App)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+تطبيق أندرويد أصلي عالي الأداء يحاكي تطبيق YouTube الرسمي بدقة متناهية، مبني بأحدث تقنيات Jetpack Compose و Material Design 3.
 
-  <h1>Built with AI Studio</h2>
+## 📱 الحزمة والمعرف (Package & Namespace)
+- **اسم الحزمة (Package Name)**: `com.you.play.anas`
+- **معرف التطبيق (Application ID)**: `com.you.play.anas`
+- **الهدف (Target SDK)**: Android 14 / Android 15 (API 36)
+- **الحد الأدنى (Min SDK)**: Android 7.0 (API 24)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+---
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 🌟 المميزات الرئيسية (Key Features)
 
-</div>
+1. **مشغل فيديو يوتيوب حقيقي مدمج**:
+   - تشغيل مقاطع وفيديوهات وقنوات YouTube الفعلية باستخدام IFrame Player API.
+   - دعم كامل للتحكم في التشغيل، التقدم، ملء الشاشة، وجودة العرض.
+   - إمكانية تشغيل أي رابط YouTube خارجي ينسخه المستخدم مباشرة.
+
+2. **المشغل المصغر التفاعلي (In-App Draggable Miniplayer)**:
+   - سحب شاشة المشاهدة لأسفل لتحويلها إلى شريط مصغر يرسو فوق شريط التنقل السفلي.
+   - مواصلة الاستماع ومشاهدة الفيديو الحقيقي أثناء تصفح الواجهات الأخرى والبحث والاشتراكات.
+
+3. **التشغيل بدون تسجيل دخول (Guest Mode) + تسجيل الدخول الاختياري**:
+   - الفيديوهات تعمل تلقائياً وفوراً بدون الحاجة لتسجيل الدخول.
+   - إمكانية تسجيل الدخول السريع أو التبديل بين الحسابات في أي وقت.
+
+4. **مقاطع YouTube Shorts**:
+   - واجهة مقاطع قصيرة عمودية تتيح تصفح مقاطع Shorts بالسحب العمودي مع أزرار التفاعل الجانبية.
+
+5. **نظام الاشتراكات والإعجاب والتعليقات**:
+   - الاشتراك في القنوات وتحديث المشتركين.
+   - أزرار الإعجاب وعدم الإعجاب بأسلوب يوتيوب المقسم.
+   - لوحة التعليقات التفاعلية لإضافة وقراءة التعليقات.
+
+6. **المظهر والألوان**:
+   - التبديل التلقائي وفق إعدادات نظام الجهاز بين الوضع الداكن الفاخر (`#0F0F0F`) والوضع الفاتح النقي مع أحمر يوتيوب الأيقوني (`#FF0000`).
+
+---
+
+## 🛠️ الفتح والتشغيل في أندرويد ستوديو (Android Studio Setup)
+
+1. قم بفتح **Android Studio** (نسخة Iguana أو Jellyfish أو Koala أو أحدث).
+2. اختر **Open** ثم حدد المجلد الرئيسي للمشروع.
+3. سيقوم أندرويد ستوديو بعمل **Sync Project with Gradle Files** تلقائياً عبر Gradle Wrapper المرفق (`gradle-9.3.1`).
+4. اضغط على زر **Run** (الأيقونة الخضراء ▶) لتشغيل التطبيق على أي جهاز أو محاكي أندرويد.
+
+---
+
+## 🚀 البناء عبر سطر الأوامر (Command Line Build)
+
+```bash
+# منح صلاحية التنفيذ للـ Wrapper
+chmod +x gradlew
+
+# تشغيل الاختبارات
+./gradlew testDebugUnitTest
+
+# بناء نسخة الـ Debug APK
+./gradlew assembleDebug
+
+# ملف الـ APK الناتج تجده في:
+# app/build/outputs/apk/debug/app-debug.apk
+```
+
+---
+
+## ⚙️ البناء والتصدير التلقائي على GitHub Actions
+
+المشروع مجهز بملف سير عمل تلقائي جاهز (`.github/workflows/build.yml`). بمجرد رفع الكود إلى مستودع GitHub:
+1. سيقوم GitHub Actions بفحص الكود وبنائه تلقائياً.
+2. تشغيل كافة اختبارات الوحدة للتأكد من سلامة التطبيق.
+3. تصدير ملف `YouPlay-debug-apk` وتوفيره للتحميل المباشر من تبويب **Actions** كـ Artifact.

@@ -1,0 +1,6 @@
+{
+  "name": "YouPlay",
+  "description": "YouTube native experience with real video playback, in-app miniplayer, live search, subscriptions, comments, and cloud sync",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
